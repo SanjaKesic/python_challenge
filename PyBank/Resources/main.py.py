@@ -1,6 +1,7 @@
+# import libraries
 import os
 import csv
-
+# set the file path
 budget_csv = os.path.join("budget_data.csv")
 
 
@@ -14,8 +15,10 @@ max_increase_date = ""
 max_decrease = 0
 max_decrease_date = ""
 
+#read the file and loop through rows
 with open (budget_csv) as csvfile:
     csv_reader = csv.reader(csvfile)
+    #skip the header
     next(csv_reader)
     for row in csv_reader:
         date = row[0]
